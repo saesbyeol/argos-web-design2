@@ -123,10 +123,18 @@ nav.scrolled {
 ═══════════════════════════════════════ */
 #hero {
   min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   position: relative;
   overflow: hidden;
+}
+
+.hero-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
 }
  
 .hero-bg {
@@ -1428,7 +1436,7 @@ footer {
    RESPONSIVE
 ═══════════════════════════════════════ */
 @media (max-width: 1024px) {
-  #hero { grid-template-columns: 1fr; }
+  .hero-inner { grid-template-columns: 1fr; }
   .hero-right { display: none; }
   .hero-left { padding: 7rem 4rem 4rem; align-items: center; text-align: center; }
   .hero-sub { margin-left: auto; margin-right: auto; }
