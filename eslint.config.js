@@ -21,6 +21,7 @@ export default [
         document: 'readonly',
         console: 'readonly',
         IntersectionObserver: 'readonly',
+        URL: 'readonly',
         URLSearchParams: 'readonly',
         HTMLElement: 'readonly',
         HTMLFormElement: 'readonly',

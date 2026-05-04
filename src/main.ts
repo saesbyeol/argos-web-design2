@@ -4,6 +4,25 @@ const REVEAL_ROOT_MARGIN = '0px 0px -60px 0px';
 const CONTACT_EMAIL = 'office@argoshellas.rs';
 const MAX_FIELD_LEN = 5000;
 
+function setActiveNav(): void {
+  const path = window.location.pathname;
+  const links = document.querySelectorAll<HTMLAnchorElement>('nav#mainNav a[href]');
+  links.forEach((link) => {
+    const href = link.getAttribute('href');
+    if (!href) return;
+    let target: string;
+    try {
+      target = new URL(href, window.location.origin).pathname;
+    } catch {
+      return;
+    }
+    const matchesHome = (target === '/' || target === '/index.html') && (path === '/' || path === '/index.html');
+    if (matchesHome || (target !== '/' && target === path)) {
+      link.setAttribute('aria-current', 'page');
+    }
+  });
+}
+
 function setupNavScroll(): void {
   const nav = document.getElementById('mainNav');
   if (!nav) return;
@@ -155,6 +174,7 @@ function setupContactForm(): void {
 }
 
 function init(): void {
+  setActiveNav();
   setupNavScroll();
   setupReveal();
   setupSmoothScroll();

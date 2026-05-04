@@ -98,6 +98,9 @@ nav.scrolled {
  
 .nav-links a:hover { color: var(--gold); }
 .nav-links a:hover::after { width: 100%; }
+
+.nav-links a[aria-current="page"] { color: var(--gold); }
+.nav-links a[aria-current="page"]::after { width: 100%; }
  
 .nav-cta {
   font-size: 0.75rem;
@@ -141,7 +144,7 @@ nav.scrolled {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 8rem 4rem 6rem 3rem;
+  padding: 8rem 4rem 6rem 6rem;
   position: relative;
   z-index: 2;
 }
@@ -1427,6 +1430,9 @@ footer {
 @media (max-width: 1024px) {
   #hero { grid-template-columns: 1fr; }
   .hero-right { display: none; }
+  .hero-left { padding: 7rem 4rem 4rem; align-items: center; text-align: center; }
+  .hero-sub { margin-left: auto; margin-right: auto; }
+  .hero-eyebrow, .hero-actions, .hero-meta { justify-content: center; }
   .about-grid, .re-grid, .horeca-grid, .impex-inner, .contact-top { grid-template-columns: 1fr; gap: 3rem; }
   .divisions-grid, .invest-cards { grid-template-columns: 1fr; }
   .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
